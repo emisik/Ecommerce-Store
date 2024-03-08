@@ -22,7 +22,7 @@ const useCart = create(
                 return toast("Item alredy added to cart.")
             }
 
-            set({items: [...get().items,data]});
+            set({items: [...get().items, data]});
             toast.success("Item added to cart.")
         },
         removeItem: (id:string) => {
