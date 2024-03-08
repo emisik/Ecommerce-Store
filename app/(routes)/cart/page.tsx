@@ -2,22 +2,24 @@
 
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
+import { Suspense } from "react";
 
 const CartPage = () => {
   const cart = useCart();
 
-  // const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-  // if (!isMounted) {
-  //   return null;
-  // }
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  if (!isMounted) {
+    return null;
+  }
   return (
+    <Suspense>
     <div className="bg-white">
       <Container>
         <div className="px-4 py-16 sm:px-6 lg:px-8">
@@ -39,6 +41,7 @@ const CartPage = () => {
         </div>
       </Container>
     </div>
+    </Suspense>
   );
 };
 
