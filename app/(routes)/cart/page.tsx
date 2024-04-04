@@ -2,10 +2,10 @@
 
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
-import { Suspense } from "react";
+
 
 const CartPage = () => {
   const cart = useCart();
@@ -19,7 +19,7 @@ const CartPage = () => {
     return null;
   }
   return (
-    <Suspense>
+
     <div className="bg-white">
       <Container>
         <div className="px-4 py-16 sm:px-6 lg:px-8">
@@ -41,7 +41,7 @@ const CartPage = () => {
         </div>
       </Container>
     </div>
-    </Suspense>
+
   );
 };
 
